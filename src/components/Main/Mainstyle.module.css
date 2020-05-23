@@ -1,0 +1,98 @@
+.main_parent {
+    max-width: 95%;
+    padding-left: 20px;
+    padding-right: 4%;
+    overflow-x: hidden;
+    height: auto;
+    background-color: #182C61;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.main_parent > h2 {
+    color: white;
+    font-family: sans-serif;
+}
+
+.main_parent > hr {
+    /* position: absolute; */
+    width: 90%;
+    height: 1px;
+    margin-left: 3% !important;
+    background-color: white;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    opacity: 0.2;
+}
+
+.card_container {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.movie_card {
+    width: 120px;
+    height: 260px;
+    margin: 15px 15px;
+    text-align: left;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all ease 200ms;
+}
+
+.movie_card:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 200;
+}
+
+.movie_card > h3 {
+    margin: 0;
+    font-family: 'Open sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    margin-top: -26px;
+    color: white;
+}
+
+.movie_card > img {
+    width: 100%;
+}
+
+.vote_viewer {
+    position: relative;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -60px;
+    left: 85%;
+    background-color: orangered;
+    border-radius: 50px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 500px) {
+    .movie_card {
+        width: 150px;
+    }
+}
+
+@media (max-width: 380px) {
+    .movie_card {
+        width: 130px;
+    }
+}

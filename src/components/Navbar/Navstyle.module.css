@@ -1,0 +1,38 @@
+.nav {
+    height: 60px;
+    width: 90%;
+    padding-right: 10%;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.nav > input {
+    height: 30px;
+    width: 20%;
+    padding-left: 10px;
+}
+
+
+.nav_brand {
+    /* background-color: pink; */
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 1rem;
+}
+
+.nav_filter{
+    display: flex;
+    flex-direction: row;
+    /* background-color: pink; */
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 50%;
+}
