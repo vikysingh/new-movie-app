@@ -1,10 +1,57 @@
 .slideshow {
-    height: 90vh;
     width: 100%;
-    background-color: pink;
+    height: 90vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 37% 63%;
 }
 
-.slideshow > img {
+.slideshow_img {
+    cursor: pointer;
+    transition: 250ms all ease;
+}
+
+.slideshow_img:hover {
+    transform: scale(1.2);
+}
+
+.slideshow_left_col {
+    grid-column: 1 / 2;
     width: 100%;
     height: 100%;
+}
+
+.slideshow_right_col {
+    grid-column: 2 / -1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+
+.slideshow_right_first_col,  .slideshow_right_second_col {
+    display: flex;
+    flex-direction: row;
+}
+
+.slideshow_right_first_col{
+    grid-row: 1 / 2;
+    width: 100%;
+    max-height: 100%;
+}
+
+.slideshow_right_second_col{
+    grid-row: 2 / -1;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow_right_first_col > img{
+    width: 35%;
+    height: 100%;
+}
+
+.slideshow_right_second_col > .slideshow_img:nth-child(1) {
+    width: 100%;
+    
 }

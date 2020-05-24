@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react"
 import styles from "./Mainstyle.module.css"
+import TopRated from "./TopRated/TopRated"
 
 function Main() {
 
     const [ discoverState, setDiscoverState ] = useState()
     const [ trendState, setTrendState ] = useState()
-    const [ topRatedState, setTopRatedState ] = useState()
 
     const api_key = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
         getData()
         getTrending()
-        getTopRated()
     }, [])
 
     async function getData() {
@@ -51,29 +50,14 @@ function Main() {
             <h3 key={each.original_title} > {each.original_title} </h3>
         </span>))
     }
-
-    async function getTopRated() {
-        let res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`)
-        let data = await res.json()
-
-        /*let res2 = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=2`)
-        let data2 = await res2.json()
-
-        let bp;
-        bp = data.results.concat(data2.results)*/
-
-        await setTopRatedState(data.results.map(each => <span key={each.popularity} className={styles.movie_card}>
-            <img src={`https://image.tmdb.org/t/p/w500${each.poster_path}`} 
-            key={each.poster_path} alt={each.original_title} />
-
-            <span className={styles.vote_viewer} key={each.vote_average}> {each.vote_average} </span>
-
-            <h3 key={each.original_title} > {each.original_title} </h3>
-        </span>))
-    }
     
     return(
         <div className={styles.main_parent} >
+
+            {/* <h2>Top rated</h2>
+            <hr />
+            <TopRated /> */}
+
             <h2>Discover movie</h2>
             <hr />
             <span className={styles.card_container}>
@@ -81,18 +65,12 @@ function Main() {
                     discoverState ? discoverState : <h2>Error</h2>
                 }
             </span>
+
             <h2>Trending this week</h2>
             <hr />
             <span className={styles.card_container}>
                 {
                     trendState ? trendState : <h2>Error</h2>
-                }
-            </span>
-            <h2>Top rated</h2>
-            <hr />
-            <span className={styles.card_container}>
-                {
-                    topRatedState ? topRatedState : <h2>Error</h2>
                 }
             </span>
         </div>

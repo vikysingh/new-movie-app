@@ -2,7 +2,10 @@
     height: 60px;
     width: 90%;
     padding-right: 10%;
-    background-color: red;
+    /* background-color: red; */
+    /* background-color: #182C61; */
+    background-color: rgb(255, 255, 255);
+    /* position: absolute; */
     display: flex;
     flex-direction: row;
     align-items: center;
