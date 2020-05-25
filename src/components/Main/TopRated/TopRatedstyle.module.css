@@ -1,29 +1,30 @@
-.top_rated_card_container {
+.slide_container {
+    min-height: 280px;
     width: 100%;
-    min-height: 130%;
+}
+
+.each_slide {
+    min-width: inherit;
+    margin: 0 20px;
+    transition: 200ms all ease;
+}
+
+.each_slide > div {
+    background-color: #fff;
     display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-}
-
-.top_rated_movie_card {
-    margin: 30px;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+    min-height: 550px;
     cursor: pointer;
-    transition: 250ms all ease;
-    font-family: 'Open Sans', sans-serif;
+}
+
+.each_slide:hover {
+    transform: scale(0.8);
+}
+
+.each_slide > div > h2 {
+    font-family: 'Open sans', sans-serif;
     color: white;
-    font-weight: lighter !important;
-    width: 340px;
-}
-
-.top_rated_movie_card > img {
-    height: 80%;
-    width: 100%;
-}
-
-.top_rated_movie_card:hover {
-    transform: scale(1.1);
+    background: #000;
 }

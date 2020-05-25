@@ -54,9 +54,9 @@ function Main() {
     return(
         <div className={styles.main_parent} >
 
-            {/* <h2>Top rated</h2>
-            <hr />
-            <TopRated /> */}
+            <h2>Top rated</h2>
+            <hr />*
+            <TopRated /> 
 
             <h2>Discover movie</h2>
             <hr />
