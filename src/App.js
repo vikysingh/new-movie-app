@@ -6,23 +6,36 @@ import Slideshow from "./components/Slideshow/Slideshow"
 
 import "./index.css"
 import Main from './components/Main/Main';
+import StoreContextProvider from "./context"
+import MoviePage from './components/MoviePage/MoviePage';
+import Search from './components/Search/Search';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact>
-        <div className="App">
+    <StoreContextProvider>
+      <BrowserRouter>
+        <Switch>
+
+          <Route path="/" exact>
+            <div className="App">
+              <Navbar />
+              <Slideshow />
+              <Main />
+            </div>
+          </Route>
+
+          <Route path="/movie/:id">
+            <MoviePage />
+          </Route>
+
+          <Route exact path="/search">
             <Navbar />
-            <Slideshow />
-            <Main />
-          </div>
-        </Route>
-        <Route path="/:route-movie-id">
-          helllo
-        </Route>
-      </Switch>
-    </BrowserRouter>
+            <Search />
+          </Route>
+
+        </Switch>
+      </BrowserRouter>
+    </StoreContextProvider>
   );
 }
 
